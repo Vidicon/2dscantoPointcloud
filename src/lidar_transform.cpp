@@ -7,17 +7,6 @@
 
 ros::Publisher g_scan3d_pub;
 
-geometry_msgs::Point32 angularDistanceToPoint(float pan, float tilt,float distance)
-{
-    geometry_msgs::Point32 point;
-
-    point.x = -(sin(i) * distance);
-    point.y = cos(i) * sin(iy) * distance;
-    point.z = cos(iy) * cos(i) * distance;
-
-    return point;
-}
-
 void scanCallback(const sensor_msgs::LaserScan::ConstPtr& msg)
 {
     sensor_msgs::LaserScan scan = (sensor_msgs::LaserScan)*msg;
